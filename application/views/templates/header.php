@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css" media="all">
   <script src="http://cdn.ckeditor.com/4.5.11/standard/ckeditor.js"></script>
 </head>
 
@@ -22,8 +22,14 @@
           <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>posts">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>categories">Categories</a></li>
         </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="<?php echo base_url(); ?>posts/create" class="nav-link">create post</a></li> 
+          <li class="nav-item"><a href="<?php echo base_url(); ?>categories/create" class="nav-link">create category</a></li> 
+          <li class="nav-item"><a href="<?php echo base_url(); ?>login" class="nav-link">login</a></li>
+          <li class="nav-item"><a href="<?php echo base_url(); ?>register" class="nav-link">register</a></li> 
+        </ul>
 
       </div>
     </div>
   </nav>
-  <div class="container">
+  <div class="container container-wrap">
