@@ -15,5 +15,35 @@
         </form>
 
     </div>
+    <hr>
+    <h3>Comments</h3>
+    <?php if ($comments) : ?>
+        <?php foreach ($comments as $comment) : ?>
+            <div class="alert alert-dismissible alert-light">
+                <h5><?php echo $comment['body']; ?> [by <strong><?php echo $comment['name']; ?></strong>]</h5>
+            </div>
+        <?php endforeach; ?>
+    <?php else : ?>
+        <p>No Comments To Display</p>
+    <?php endif; ?>
+    <hr>
+    <h3>Add Comment</h3>
+    <?php echo validation_errors(); ?>
+    <?php echo form_open('comments/create/' . $post['id']); ?>
+    <div class="form-group">
+        <label class="form-label mt-4">Name</label>
+        <input type="text" name="name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="form-label mt-4">Email</label>
+        <input type="text" name="email" class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="form-label mt-4">Body</label>
+        <textarea name="body" class="form-control"></textarea>
+    </div>
+    <input type="hidden" name="slug" value="<?php echo $post['slug']; ?>">
+    <button class="btn btn-primary mt-4" type="submit">Submit</button>
+    </form>
 
 </div>

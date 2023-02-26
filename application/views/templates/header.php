@@ -13,8 +13,11 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
+    <div class="container container-fluid">
       <a class="navbar-brand" href="<?php echo base_url(); ?>">ciBlog</a>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div id="navbarColor01" class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto">
           <li class="nav-item"><a class="nav-link active" href="<?php echo base_url(); ?>">Home</a></li>
@@ -23,10 +26,10 @@
           <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>categories">Categories</a></li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item"><a href="<?php echo base_url(); ?>posts/create" class="nav-link">create post</a></li> 
-          <li class="nav-item"><a href="<?php echo base_url(); ?>categories/create" class="nav-link">create category</a></li> 
+          <li class="nav-item"><a href="<?php echo base_url(); ?>posts/create" class="nav-link">create post</a></li>
+          <li class="nav-item"><a href="<?php echo base_url(); ?>categories/create" class="nav-link">create category</a></li>
           <li class="nav-item"><a href="<?php echo base_url(); ?>login" class="nav-link">login</a></li>
-          <li class="nav-item"><a href="<?php echo base_url(); ?>register" class="nav-link">register</a></li> 
+          <li class="nav-item"><a href="<?php echo base_url(); ?>register" class="nav-link">register</a></li>
         </ul>
 
       </div>

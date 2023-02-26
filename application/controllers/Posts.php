@@ -6,6 +6,7 @@ class Posts extends CI_Controller
     {
         parent::__construct();
         $this->load->model('posts_model');
+        $this->load->model('comment_model');
         $this->load->helper('url_helper');
     }
 
@@ -23,6 +24,9 @@ class Posts extends CI_Controller
     public function view($slug = NULL)
     {
         $data['post'] = $this->posts_model->get_posts($slug);
+        $post_id = $data['post']['id'];
+        //get comments for this post
+        $data['comments'] = $this->comment_model->get_comments($post_id);
         if (empty($data['post'])) {
             show_404();
         }
