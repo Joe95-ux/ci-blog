@@ -24,7 +24,7 @@
             </div>
         <?php endforeach; ?>
     <?php else : ?>
-        <p>No Comments To Display</p>
+        <p>No Comments To Display. Be the First to comment!</p>
     <?php endif; ?>
     <hr>
     <h3>Add Comment</h3>
