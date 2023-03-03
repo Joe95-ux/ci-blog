@@ -22,10 +22,17 @@
 	min-width: 240px;
 	object-fit: cover;
 }
-.wrapper-enclosure{
+.wrapper-enclosure, .wrapper-enclosure-login{
 	position: relative;
-	max-width: calc(850px - 2rem);
 	margin: 0 auto;
+}
+
+.wrapper-enclosure{
+	max-width: calc(850px - 2rem);
+}
+
+.wrapper-enclosure-login{
+	max-width: calc(700px - 1.5rem);
 }
 .post-image{
 	margin-top: 1rem;

@@ -28,11 +28,48 @@
         <ul class="navbar-nav">
           <li class="nav-item"><a href="<?php echo base_url(); ?>posts/create" class="nav-link">create post</a></li>
           <li class="nav-item"><a href="<?php echo base_url(); ?>categories/create" class="nav-link">create category</a></li>
-          <li class="nav-item"><a href="<?php echo base_url(); ?>login" class="nav-link">login</a></li>
-          <li class="nav-item"><a href="<?php echo base_url(); ?>register" class="nav-link">register</a></li>
+          <li class="nav-item"><a href="<?php echo base_url(); ?>user/login" class="nav-link">login</a></li>
+          <li class="nav-item"><a href="<?php echo base_url(); ?>user/register" class="nav-link">register</a></li>
         </ul>
 
       </div>
     </div>
   </nav>
   <div class="container container-wrap">
+  <div class="container">
+      <!-- Flash messages -->
+      <?php if($this->session->flashdata('user_registered')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>'; ?>
+      <?php endif; ?>
+
+      <?php if($this->session->flashdata('post_created')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('post_created').'</p>'; ?>
+      <?php endif; ?>
+
+      <?php if($this->session->flashdata('post_updated')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('post_updated').'</p>'; ?>
+      <?php endif; ?>
+
+      <?php if($this->session->flashdata('category_created')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('category_created').'</p>'; ?>
+      <?php endif; ?>
+
+      <?php if($this->session->flashdata('post_deleted')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('post_deleted').'</p>'; ?>
+      <?php endif; ?>
+
+      <?php if($this->session->flashdata('login_failed')): ?>
+        <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('login_failed').'</p>'; ?>
+      <?php endif; ?>
+
+      <?php if($this->session->flashdata('user_loggedin')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedin').'</p>'; ?>
+      <?php endif; ?>
+
+       <?php if($this->session->flashdata('user_loggedout')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedout').'</p>'; ?>
+      <?php endif; ?>
+
+      <?php if($this->session->flashdata('category_deleted')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('category_deleted').'</p>'; ?>
+      <?php endif; ?>
