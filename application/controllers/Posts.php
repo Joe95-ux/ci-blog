@@ -39,6 +39,10 @@ class Posts extends CI_Controller
 
     public function create()
     {
+        //check if user is logged in first
+        if(!$this->session->userdata('logged_in')){
+           redirect('user/login');
+        }
         $data['title'] = 'Create Post';
         $data['categories'] = $this->posts_model->get_categories();
         //form validation rules
@@ -78,6 +82,10 @@ class Posts extends CI_Controller
 
     public function edit($slug)
     {
+        //check if user is logged in first
+        if(!$this->session->userdata('logged_in')){
+            redirect('user/login');
+        }
 
         $data['title'] = 'Edit Post';
         $this->form_validation->set_rules('title', 'Title', 'required');
@@ -85,6 +93,13 @@ class Posts extends CI_Controller
 
         $data['post'] = $this->posts_model->get_posts($slug);
         $data['categories'] = $this->posts_model->get_categories();
+
+        // Check user
+        if($this->session->userdata('user_id') != $data['post']['user_id']){
+            redirect('posts');
+        }
+
+
         if (empty($data['post'])) {
             show_404();
         }
@@ -101,6 +116,11 @@ class Posts extends CI_Controller
 
     public function delete($id)
     {
+        //check if user is logged in first
+        if(!$this->session->userdata('logged_in')){
+            redirect('user/login');
+        }
+
         $this->posts_model->delete_post($id);
         // Set message
 			$this->session->set_flashdata('post_deleted', 'Your post has been deleted');
@@ -109,6 +129,10 @@ class Posts extends CI_Controller
 
     public function update()
     {
+        //check if user is logged in first
+        if(!$this->session->userdata('logged_in')){
+            redirect('user/login');
+        }
         $this->posts_model->update_post();
 
         // Set message

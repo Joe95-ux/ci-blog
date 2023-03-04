@@ -26,10 +26,15 @@
           <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>categories">Categories</a></li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item"><a href="<?php echo base_url(); ?>posts/create" class="nav-link">create post</a></li>
-          <li class="nav-item"><a href="<?php echo base_url(); ?>categories/create" class="nav-link">create category</a></li>
-          <li class="nav-item"><a href="<?php echo base_url(); ?>user/login" class="nav-link">login</a></li>
-          <li class="nav-item"><a href="<?php echo base_url(); ?>user/register" class="nav-link">register</a></li>
+          <?php if(!$this->session->userdata('logged_in')) :?>
+            <li class="nav-item"><a href="<?php echo base_url(); ?>user/login" class="nav-link">login</a></li>
+            <li class="nav-item"><a href="<?php echo base_url(); ?>user/register" class="nav-link">register</a></li>
+          <?php endif; ?>
+          <?php if($this->session->userdata('logged_in')) : ?>
+            <li class="nav-item"><a href="<?php echo base_url(); ?>posts/create" class="nav-link">Create Post</a></li>
+            <li class="nav-item"><a href="<?php echo base_url(); ?>categories/create" class="nav-link">Create Category</a></li>
+            <li class="nav-item"><a href="<?php echo base_url(); ?>user/logout" class="nav-link">Logout</a></li>
+          <?php endif; ?>
         </ul>
 
       </div>
