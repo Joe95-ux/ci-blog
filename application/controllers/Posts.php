@@ -21,6 +21,7 @@ class Posts extends CI_Controller
 		$config['uri_segment'] = 3;
 		$config['attributes'] = array('class' => 'pagination-link');
 
+
 		// Init Pagination
 		$this->pagination->initialize($config);
 
